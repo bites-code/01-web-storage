@@ -1,7 +1,7 @@
 const key = "NAME";
 const userInput = document.getElementById("input");
 const button = document.getElementById("button");
-const name = document.getElementById("name");
+const nameDiv = document.getElementById("name");
 
 
 // Handle the button onclick event
@@ -14,7 +14,7 @@ if (typeof(Storage) !== "undefined") {
 
     // if a name has been saved, carry on
     if (savedName !== null)
-        name.innerHTML = `Welcome back, ${savedName}`;
+        nameDiv.innerHTML = `Welcome back, ${savedName}`;
 } else {
     console.log("Web storage is not supported.");
 }
@@ -23,7 +23,7 @@ function onClick() {
     // early out if the user doesn't enter anything
     if (userInput.value !== "") {
         // Set the value of the empty div to welcome the user by name
-        name.innerHTML = `Welcome, ${userInput.value}`;
+        nameDiv.innerHTML = `Welcome, ${userInput.value}`;
         saveToWebStorage(userInput.value);
     }
 }
